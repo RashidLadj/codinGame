@@ -25,6 +25,29 @@ def toMorse (word):
     return morseWord_
 
 
+def solve(sequence, start):
+    """
+      recursive function which calculates the number of sentences 
+      that can be decoded from a sequence of Morse code.
+      
+      Args:
+              Sequence (string): The character string comprising the sequence in Morse code
+              start (int) : An integer representing the start of the sub-sequence to be processed
+      Returns:
+              counter (integer) : Returning value
+    """
+
+    counter = 0
+
+    if (start == len(sequence)):
+        return 1
+
+    for morseWord in morseWords:
+        if morseWord == sequence[start: start + len(morseWord)]: 
+            counter += solve(sequence , start + len(morseWord))
+    
+    return counter
+
 
 ##########  Read Data ##########
 morseWords = [] # list of words in the dictionary coded in Morse code
@@ -35,7 +58,5 @@ dictionarySize = int(input())
 for i in range(dictionarySize):
     morseWords.append( toMorse(input())) # get word, convert it to morse langage, and add it to out list
 
-
 ##########  solve problem ##########
-if morseSequence in morseWords:
-  print ("1")
+print (solve (morseSequence, 0))
