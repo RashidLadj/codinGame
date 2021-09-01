@@ -6,7 +6,7 @@ using namespace std;
 
 
 /******** Methods ********/
-string morse(const string& word);
+string toMorse(const string& word);
 long solve(const string &sequence, const int &start, const unordered_map<string, int> &morseWords, vector<long> &resultTemp);
 
 /******** Variables ********/
@@ -30,7 +30,7 @@ int main(){
     for (int i = 0; i < dictionarySize ; ++i) {
         string morseWord ;
         cin >> morseWord ; cin.ignore();
-        morseWord = morse(morseWord);
+        morseWord = toMorse(morseWord);
         
 
         /******** Update min and max ********/
