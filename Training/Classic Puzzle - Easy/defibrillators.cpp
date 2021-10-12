@@ -1,27 +1,29 @@
+/**
+ * @file Defibrilateurs.cpp
+ * @author Ladjouzi Rachid (RashidLadj@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-10-12
+ * 
+ * @copyright Copyright (c) 2021
+ */
+
 #include <iostream>
-#include <string>
 #include <vector>
 #include <algorithm>
-#include "cmath"
+#include <cmath>
 
 using namespace std;
 
 vector<string> split (const string &s, const string &delimiter);
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
-
 int main(){
-    string LON, LAT;    cin >> LON; cin.ignore();   cin >> LAT; cin.ignore();
+    string LON, LAT;    int N;    cin >> LON >> LAT >> N; cin.ignore();
 
     std::replace( LON.begin(), LON.end(), ',', '.');
     std::replace( LAT.begin(), LAT.end(), ',', '.');
 
     double lon = stod(LON), lat = stod(LAT);
-
-    int N;  cin >> N; cin.ignore();
 
     vector<vector<string>> data;
 

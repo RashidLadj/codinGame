@@ -1,18 +1,20 @@
-#include <iostream>
-#include <limits>
-#include <cmath>
+/**
+ * @file Power_of_Thor_EP1.cpp
+ * @author Ladjouzi Rachid (RashidLadj@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-10-11
+ * 
+ * @copyright Copyright (c) 2021
+ */
+
+#include <iostream> /** std::cout **/
+#include <limits>   /** std::numeric_limits<double>::quiet_NaN() **/
+#include <cmath>    /** std::isnan **/
 
 using namespace std;
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- * ---
- * Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
- **/
-
-int main()
-{
+int main(){
     int lightX; // the X position of the light of power
     int lightY; // the Y position of the light of power
     int initialTX; // Thor's starting X position
@@ -22,14 +24,10 @@ int main()
     double deltaX = std::numeric_limits<double>::quiet_NaN();
     double deltaY = std::numeric_limits<double>::quiet_NaN();
 
-
-    // game loop
+    /** Game loop **/
     while (1) {
         int remainingTurns; // The remaining amount of turns Thor can move. Do not remove this line.
         cin >> remainingTurns; cin.ignore();
-
-        // Write an action using cout. DON'T FORGET THE "<< endl"
-        // To debug: cerr << "Debug messages..." << endl;
     
         if (std::isnan(deltaX)){
             deltaX = lightX - initialTX;

@@ -1,3 +1,13 @@
+"""
+ @file Sudoku_Validator.py
+ @author Ladjouzi Rachid (RashidLadj@gmail.com)
+ @brief 
+ @version 0.1
+ @date 2021-09-14
+ 
+ @copyright Copyright (c) 2021
+"""
+
 import numpy as np
 import itertools
 
@@ -24,11 +34,8 @@ def solve(sudokuGrid):
 
 ##############################################
 mySudoku = []
-
 for i in range(9):
     for j in input().split():
         mySudoku = np.append(mySudoku, int(j))
 
-mySudoku = mySudoku.reshape((9, 9))
-
-print("true") if solve(mySudoku) else print("false")
+print("true") if solve(mySudoku.reshape((9, 9))) else print("false")

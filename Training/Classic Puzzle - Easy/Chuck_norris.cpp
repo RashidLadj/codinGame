@@ -1,20 +1,23 @@
-#include <iostream>
-#include <bitset>         // std::bitset
+/**
+ * @file Chuck_Norris.cpp
+ * @author Ladjouzi Rachid (RashidLadj@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-10-12
+ * 
+ * @copyright Copyright (c) 2021
+ */
 
+#include <iostream>
+#include <bitset>  /** std::bitset **/
 
 using namespace std;
 
-
 string solve(const string &binaryMessage);
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
 
 int main(){
     string MESSAGE;
     getline(cin, MESSAGE);
-
     cout << solve(MESSAGE) << endl;
 }
 

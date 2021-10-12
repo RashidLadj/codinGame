@@ -1,6 +1,15 @@
+"""
+ @file The_Resistance.py
+ @author Ladjouzi Rachid (RashidLadj@gmail.com)
+ @brief 
+ @version 0.1
+ @date 2021-08-31
+ 
+ @copyright Copyright (c) 2021
+"""
+
 import sys
 import math
-
 
 morseAlphabet = [
     ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....",
@@ -24,7 +33,6 @@ def toMorse (word):
 
     return morseWord_
 
-
 def solve(sequence, start, resultTemp):
     """
       recursive function which calculates the number of sentences 
@@ -38,15 +46,12 @@ def solve(sequence, start, resultTemp):
     """
 
     counter = 0
-
-    if (start == len(sequence)):
+    if start == len(sequence):
         return 1
     
     # if resultTemp[start] != math.nan:
     if not math.isnan(resultTemp[start]):
-
         return resultTemp[start]
-
 
     for morseWord in morseWords:
         if morseWord == sequence[start: start + len(morseWord)]: 
@@ -81,5 +86,4 @@ for i in range(dictionarySize):
 for i in range(len(morseSequence)):
     resultTemp.append(math.nan)
 
-print (solve (morseSequence, 0, resultTemp))
-
+print( solve(morseSequence, 0, resultTemp))

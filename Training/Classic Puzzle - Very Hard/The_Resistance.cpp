@@ -1,9 +1,18 @@
+/**
+ * @file The_Resistance.cpp
+ * @author Ladjouzi Rachid (RashidLadj@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-08-31
+ * 
+ * @copyright Copyright (c) 2021
+ */
+
 #include <iostream>
 #include <vector>
 #include <unordered_map>
 
 using namespace std;
-
 
 /******** Methods ********/
 string toMorse(const string& word);
@@ -21,18 +30,16 @@ int main(){
     string morseSequence; // sequence morse
     cin >> morseSequence; cin.ignore();
 
-    vector<long> resultTemp  = vector<long> (morseSequence.length() + 1, -1);
+    vector<long> resultTemp = vector<long> (morseSequence.length() + 1, -1);
 
     int dictionarySize ; // number of words in dictionary
     cin >> dictionarySize ; cin.ignore();
 
 
     for (int i = 0; i < dictionarySize ; ++i) {
-        string morseWord ;
-        cin >> morseWord ; cin.ignore();
+        string morseWord ;  cin >> morseWord ; cin.ignore();
         morseWord = toMorse(morseWord);
         
-
         /******** Update min and max ********/
             if (morseWord.length() > max_)
                 max_ = morseWord.length();
@@ -40,7 +47,6 @@ int main(){
             if (morseWord.length() < min_)
                 min_ = morseWord.length();
         /************************************/
-
 
         /****************************************************************************************************************
         ** This is for optimization in solve method                                                                    **
@@ -57,7 +63,7 @@ int main(){
 
 }
 
-string morse(const string& word){
+string toMorse(const string& word){
     std::vector<string> morse = {
         ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....",
         "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.",
@@ -66,17 +72,14 @@ string morse(const string& word){
     };
 
     string result = "";
-    for (int i = 0; i < word.length(); ++i){
+    for (int i = 0; i < word.length(); ++i)
         result += morse[word[i] - 65];
-    }
     return result;
 }
 
-
 long solve(const string &sequence, const int &start, const unordered_map<string, int> &morseWords, vector<long> &resultTemp){
-    if ( start == sequence.length()){
+    if ( start == sequence.length())
         return 1;
-    }
 
     if (resultTemp [start] != -1)
         return resultTemp [start];
@@ -86,23 +89,21 @@ long solve(const string &sequence, const int &start, const unordered_map<string,
     /** less optimized **/
     // for (const auto & word : morseWords ){
     //     if (word.second>0)
-    //         if (word.first == sequence.substr(start, word.first.length())){
+    //         if (word.first == sequence.substr(start, word.first.length()))
     //             cpt += word.second * solve_(sequence, start + word.first.length());
-    //         }
     // }
 
     /** More optimized **/
-    for (int i = min_ ; i <= max_  && start + i  <= sequence.length(); ++i){
-        string s =  sequence.substr(start, i);
+    for (int i = min_; i <= max_ && start + i <= sequence.length(); ++i){
+        string s = sequence.substr(start, i);
         int occ = 0;
         try {
             occ = morseWords.at(s);      // unordered_map::at throws an out-of-range if key odn't exsit
-            if (occ > 0){
+            if (occ > 0)
                 cpt += occ * solve(sequence, start + i, morseWords, resultTemp);
-            }
         }catch(const std::out_of_range& oor) {
         }
     } 
     
-    return  resultTemp [start] = cpt; 
+    return  resultTemp[start] = cpt; 
 }
