@@ -1,5 +1,5 @@
 /**
- * @file Defibrilateurs.cpp
+ * @file Defibrillators.cpp
  * @author Ladjouzi Rachid (RashidLadj@gmail.com)
  * @brief 
  * @version 0.1
