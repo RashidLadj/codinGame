@@ -33,7 +33,7 @@ In this reposority you will find my working solutions for puzzles on the platfor
 | 12 | [ANEO Sponsored Puzzle](https://www.codingame.com/training/medium/aneo) | :x: Not Completed | Medium | |
 | 13 | [Apple tree](https://www.codingame.com/training/hard/apple-tree) | :x: Not Completed | Hard | |
 | 14 | [Army ants](https://www.codingame.com/training/medium/army-ants) | :x: Not Completed | Medium | |
-| 15 | [ASCII Art](https://www.codingame.com/training/easy/ascii-art) | :x: Not Completed | Easy | |
+| 15 | [ASCII Art](https://www.codingame.com/training/easy/ascii-art) | :heavy_check_mark: Completed | Easy | [C++](https://github.com/RashidLadj/codinGame/blob/main/Training/Classic%20Puzzle%20-%20Easy/Ascii_Art.cpp), [Python](https://github.com/RashidLadj/codinGame/blob/main/Training/Classic%20Puzzle%20-%20Easy/Ascii_Art.py) |
 | 16 | [ASCII ART: Glass Stacking](https://www.codingame.com/training/medium/ascii-art-:-glass-stacking) | :x: Not Completed | Medium | |
 | 17 | [Ascii Graph](https://www.codingame.com/training/medium/ascii-graph) | :x: Not Completed | Medium | |
 | 18 | [A-star excercise](https://www.codingame.com/training/medium/a-star-exercise) | :x: Not Completed | Medium | |
